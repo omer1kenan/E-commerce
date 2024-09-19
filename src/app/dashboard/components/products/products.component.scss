@@ -1,0 +1,27 @@
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.img-thumbnail {
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.table {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+thead {
+    background-color: #f8f9fa;
+}
+
+th {
+    text-align: left;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}

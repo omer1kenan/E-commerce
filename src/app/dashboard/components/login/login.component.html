@@ -1,0 +1,31 @@
+<div class="auth-container">
+    <div class="auth-box">
+        <div class="auth-header">
+            <h2 *ngIf="isLoginMode">Login</h2>
+            <h2 *ngIf="!isLoginMode">Sign Up</h2>
+        </div>
+        <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="username">username</label>
+                <input type="text" id="username" formControlName="username" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" formControlName="password" class="form-control" required />
+            </div>
+            <div class="form-group" *ngIf="!isLoginMode">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control"
+                    required />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">
+                {{ isLoginMode ? 'Login' : 'Sign Up' }}
+            </button>
+        </form>
+        <p class="toggle-link">
+            <a (click)="onSwitchMode()">
+                {{ isLoginMode ? 'Create an account' : 'Already have an account? Login' }}
+            </a>
+        </p>
+    </div>
+</div>
