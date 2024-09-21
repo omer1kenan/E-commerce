@@ -9,8 +9,11 @@ export class DashboardService {
 
   constructor(private http: HttpClient) { }
   getAllCarts(param?: any) {
+    if (param == null || param == undefined) {
+      return this.http.get(environment.urlBase + 'carts');
+    }
     let params = new HttpParams();
-    params = params.append("startDate", param?.start).append("endDate", param?.end);
+    params = params.append("startdate", param?.start).append("enddate", param?.end);
     return this.http.get(environment.urlBase + 'carts', { params });
   }
   deleteCart(id: number) {

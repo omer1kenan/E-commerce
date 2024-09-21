@@ -5,6 +5,7 @@ import { ProductsDatailsComponent } from './components/products-datails/products
 import { SharedModule } from "../shared/shared.module";
 import { ProductComponent } from './components/product/product.component';
 import { RouterModule } from '@angular/router';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 
 
 
@@ -12,7 +13,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     AllPorductsComponent,
     ProductsDatailsComponent,
-    ProductComponent
+    ProductComponent,
+    ConfirmComponent
   ],
   imports: [
     CommonModule,

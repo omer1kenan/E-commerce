@@ -1,0 +1,33 @@
+<div *ngIf="orderSuccess; else failureTemplate">
+    <div class="confirmation-container">
+        <div class="confirmation-box">
+            <div class="checkmark-circle">
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="checkmark-circle-bg" cx="26" cy="26" r="25" fill="none" />
+                    <path class="checkmark-check" fill="none" d="M14 27l7 7 16-16" />
+                </svg>
+            </div>
+            <h1>Thank You!</h1>
+            <p>Your order has been placed successfully.</p>
+            <p class="order-info">Order ID: <strong>{{ orderId }}</strong></p>
+            <p>We will send you an email confirmation shortly.</p>
+            <button class="back-button" (click)="continueShopping()">Continue Shopping</button>
+        </div>
+    </div>
+</div>
+
+<ng-template #failureTemplate>
+    <div class="confirmation-container">
+        <div class="confirmation-box">
+            <div class="error-circle">
+                <svg class="error" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="error-circle-bg" cx="26" cy="26" r="25" fill="none" />
+                    <path class="error-x" fill="none" d="M16 16 L36 36 M36 16 L16 36" />
+                </svg>
+            </div>
+            <h1>Order Failed</h1>
+            <p>Unfortunately, we were unable to process your order.</p>
+            <button class="back-button" (click)="retryOrder()">Try Again</button>
+        </div>
+    </div>
+</ng-template>

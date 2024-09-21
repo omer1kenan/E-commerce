@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -7,7 +8,7 @@ import { CartService } from '../../services/cart.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  constructor(private service: CartService) { }
+  constructor(private service: CartService, private router: Router) { }
   cartProducts: any[] = [];
   total: number = 0;
   success: boolean = false;
@@ -65,7 +66,10 @@ export class CartComponent implements OnInit {
       products: products
     }
     this.service.createNewCart(Model).subscribe(
-      res => { this.success = true });
+      res => {
+        this.success = true;
+        this.router.navigate(['/confirm']);
+      });
     console.log(Model);
     console.log("hi");
   }

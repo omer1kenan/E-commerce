@@ -6,7 +6,7 @@
                 <li *ngIf="!isLoggedIn" routerLink="/products">Products</li>
                 <li *ngIf="!isLoggedIn" routerLink="/cart">Cart</li>
                 <li *ngIf="!isLoggedIn" routerLink="/login">Login</li>
-                <!-- عرض هذه القائمة فقط إذا كان المستخدم قد قام بتسجيل الدخول -->
+
                 <li *ngIf="isLoggedIn" routerLink="/dashboard/carts">Carts</li>
                 <li *ngIf="isLoggedIn" routerLink="/dashboard/products">Products</li>
                 <li *ngIf="isLoggedIn" (click)="logout()">Logout</li>

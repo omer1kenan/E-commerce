@@ -22,7 +22,7 @@ export class AuthService {
   logout() {
     this.loggedInSubject.next(false);
     localStorage.removeItem('token');
-    this.router.navigate(['/products']);
+    this.router.navigate(['/']);
   }
 
   checkLoginStatus() {

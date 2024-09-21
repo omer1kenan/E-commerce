@@ -69,6 +69,10 @@ export class AllPorductsComponent implements OnInit {
       })
   }
   addToCart(event: any) {
+    if (!event.quantity || event.quantity <= 0) {
+      alert("Please select a valid quantity greater than 0");
+      return;
+    }
     if ("cart" in localStorage) {
       this.cartProduct = JSON.parse(localStorage.getItem("cart")!) || [];
       let exist = this.cartProduct.find(v => v.item.id == event.item.id);

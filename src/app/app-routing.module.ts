@@ -7,6 +7,7 @@ import { CartsComponent } from './dashboard/components/carts/carts.component';
 import { ProductsComponent } from './dashboard/components/products/products.component';
 import { LoginComponent } from './dashboard/components/login/login.component';
 import { authGuard } from './auth.guard';
+import { ConfirmComponent } from './products/components/confirm/confirm.component';
 
 const routes: Routes = [
   {
@@ -18,9 +19,11 @@ const routes: Routes = [
     ]
   },
   { path: 'products', component: AllPorductsComponent },
+  { path: '', component: AllPorductsComponent },
   { path: 'datails/:id', component: ProductsDatailsComponent },
   { path: 'cart', component: CartComponent },
   { path: 'dashboard/login', component: LoginComponent },
+  { path: 'confirm', component: ConfirmComponent },
   { path: '**', redirectTo: 'dashboard/login', pathMatch: 'full' },
 ];
 
